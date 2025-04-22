@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WEBCONCEPTOS - Asistente</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div id="titulo">
+    <img src="LogoWCBot.png" alt="Logo WCBot" width="128" height="128"/>
+    <h1>🤖 WCBot 1.0</h1>
+  </div>
+
+  <div id="chat">
+    <div id="messages"></div>
+
+    <div id="formulario">
+      <input type="text" id="input" placeholder="Escribe tu mensaje..." />
+      <button id="btnEnviar">Enviar</button>
+      <button onclick="usarMicrofono()">🎤</button>
+    </div>
+
+    <div id="controls">
+      <button id="btnReset">Reiniciar conversación</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

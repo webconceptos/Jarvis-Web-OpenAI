@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('FondoWCBot_WS90.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #00bcd4;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  #titulo {
+    background: url('LogoWCBot.png') no-repeat center center;
+    background-size: 128px 128px;
+    height: 128px;
+    margin: 0 auto 10px auto;
+    width: 128px;
+  }
+
+  #chat {
+    max-width: 600px;
+    margin: auto;
+    background-color: rgba(16, 21, 28, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .bubble {
+    background: #1c232b;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
+  
+  .user {
+    text-align: right;
+    color: #00e676;
+  }
+  
+  .jarvis {
+    text-align: left;
+    color: #f4f4f4;
+  }
+  
+  button {
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  #controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
