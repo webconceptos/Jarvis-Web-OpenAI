@@ -1,3 +1,37 @@
-echo __pycache__/ > .gitignore
-echo node_modules/ >> .gitignore
-echo .env >> .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# Entornos de entorno y seguridad
+.env
+.env.local
+.env.*
+
+# Sistema
+.DS_Store
+.vscode/
+*.bak
+*.tmp
+
+# Archivos de producción o temporales
+*.zip
+*.tar.gz
+*.swp
+
+# Archivos VS Code
+.vscode/
+
