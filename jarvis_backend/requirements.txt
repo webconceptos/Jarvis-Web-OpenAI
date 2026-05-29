@@ -1,10 +1,16 @@
+# requirements.txt  ─── solo las líneas clave ───
+numpy>=1.26,<2.0 
+--extra-index-url https://download.pytorch.org/whl/cpu   # ← agrega, no reemplaza
+torch==2.2.2+cpu                                         # wheel ligero
+
 fastapi
 uvicorn
 openai
-whisper
-edge-tts
+openai-whisper
+#edge-tts
+#edge-tts==6.0.9
+edge-tts==7.0.2
 scipy
-sounddevice
 pydantic
 requests
 python-multipart

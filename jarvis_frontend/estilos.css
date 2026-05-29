@@ -1,0 +1,310 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('FondoWCBot_WS90.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #00bcd4;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  #titulo {
+    background: url('LogoWCBot.png') no-repeat center center;
+    background-size: 128px 128px;
+    height: 128px;
+    margin: 0 auto 10px auto;
+    width: 128px;
+  }
+
+  #chat {
+    max-width: 600px;
+    margin: auto;
+    background-color: rgba(16, 21, 28, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .bubble {
+    background: #1c232b;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
+  
+  .user {
+    text-align: right;
+    color: #00e676;
+  }
+  
+  .jarvis {
+    text-align: left;
+    color: #f4f4f4;
+  }
+  
+  button {
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  #controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+
+/* ====== CONTROLES TTS (panel) ====== */
+#ttsControls {
+  max-width: 600px;
+  margin: 15px auto 18px;
+  background: rgba(16, 28, 36, 0.82);
+  backdrop-filter: blur(4px);
+  padding: 14px 16px 10px;
+  border: 1px solid #0f2e36;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  align-items: flex-end;
+  box-shadow: 0 4px 16px -6px rgba(0,0,0,.55);
+}
+
+#ttsControls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9dc9d2;
+  min-width: 150px;
+}
+
+#ttsControls select,
+#ttsControls input[type=range] {
+  background: #1f2d37;
+  border: 1px solid #1a3945;
+  color: #e3f5f7;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  outline: none;
+  transition: .16s;
+}
+
+#ttsControls select:focus,
+#ttsControls input[type=range]:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 2px rgba(0,188,212,0.35);
+}
+
+#ttsControls input[type=range] {
+  height: 30px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+#ttsControls input[type=range]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: linear-gradient(90deg,#0d5160,#158da3);
+  border-radius: 4px;
+  border: 1px solid #0a3a46;
+}
+#ttsControls input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  margin-top: -6px;
+  background: #00bcd4;
+  border-radius: 50%;
+  border: 2px solid #092830;
+  box-shadow: 0 0 0 4px rgba(0,188,212,0.25);
+  transition: .18s;
+}
+#ttsControls input[type=range]:hover::-webkit-slider-thumb {
+  background: #11d2ea;
+}
+
+#ttsControls span {
+  font-size: 11px;
+  color: #8fe2ff;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+/* Bloques para agrupar (si quieres más orden) */
+#ttsControls .controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ====== BOTONES EXTRA ====== */
+#btnRepeat {
+  background: #1f3139;
+  border: 1px solid #20535f;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .4px;
+}
+#btnRepeat:hover {
+  background: #276272;
+}
+
+#btnReset {
+  background: #23444f;
+  border: 1px solid #16636e;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .4px;
+}
+#btnReset:hover {
+  background: #2c6975;
+}
+
+button:active { transform: translateY(1px); }
+
+/* Ajusta el botón del micrófono si no hereda */
+#ttsControls button[title], #ttsControls button[onclick*="usarMicrofono"] {
+  background: #00bcd4;
+  border: none;
+  color: #042b32;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 6px;
+}
+#ttsControls button[title]:hover {
+  background: #11d2ea;
+}
+
+/* ====== BURBUJAS AVANZADAS ====== */
+.bubble.user {
+  background: #003b2b;
+  border: 1px solid #06c485;
+  color: #8effd6;
+  font-weight: 600;
+  text-align: right;
+}
+.bubble.jarvis {
+  background: #1d2730;
+  border: 1px solid #264653;
+  text-align: left;
+}
+.bubble.system {
+  background: #232f3a;
+  color: #9bb7c5;
+  font-style: italic;
+  border: 1px dashed #34515c;
+  text-align: center;
+  font-size: 13px;
+}
+.bubble.error {
+  background: #5d1e1e;
+  border: 1px solid #ff6b6b;
+  color: #ffdddd;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Animación suave de aparición */
+.bubble { animation: fadeIn .25s ease; }
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(4px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* ====== SCROLL SUAVE PARA #messages ====== */
+#messages {
+  scrollbar-width: thin;
+  scrollbar-color: #1c3d48 #111c23;
+}
+#messages::-webkit-scrollbar {
+  width: 10px;
+}
+#messages::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
+}
+#messages::-webkit-scrollbar-thumb {
+  background: #184a55;
+  border-radius: 6px;
+  border: 2px solid #0c1c22;
+}
+#messages::-webkit-scrollbar-thumb:hover {
+  background: #1d5d6b;
+}
+
+/* ====== LAYOUT RESPONSIVE ====== */
+@media (max-width: 640px) {
+  #ttsControls {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #ttsControls label {
+    min-width: 100%;
+  }
+  #chat {
+    padding: 16px;
+  }
+  .bubble {
+    font-size: 14px;
+  }
+  button {
+    padding: 9px 14px;
+  }
+}
+
+/* Mini badge para estado (opcional) en voz seleccionada */
+#voiceSelect:focus {
+  box-shadow: 0 0 0 3px rgba(0,188,212,0.4);
+}
+
+/* Ajuste del input de texto si quieres mayor contraste */
+input[type="text"] {
+  background: #132128;
+  color: #def3f7;
+  border: 1px solid #204650;
+}
+input[type="text"]:focus {
+  border-color: #00bcd4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,188,212,0.35);
+}
+
+#chat {
+  position: relative;
+  overflow: hidden;
+}
+#chat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(0,188,212,0.12), transparent 60%),
+    radial-gradient(circle at 25% 80%, rgba(6,196,133,0.10), transparent 55%);
+  pointer-events: none;
+}

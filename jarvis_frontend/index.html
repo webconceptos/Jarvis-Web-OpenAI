@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis Web 2.0</title>
+
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+
+    <!-- ===================== CABECERA ===================== -->
+
+    <header id="titulo">
+
+        <img
+            src="LogoWCBot.png"
+            alt="Logo WCBot"
+            width="96"
+            height="96"
+        />
+
+        <div class="title-block">
+
+            <h1>🤖 Jarvis Web 2.0</h1>
+
+            <div id="statusBar">
+                🟢 Conectado
+            </div>
+
+            <div id="modelInfo">
+                GPT-4o-mini + OpenAI TTS
+            </div>
+
+        </div>
+
+        <div class="tts-side-buttons">
+
+            <button
+                id="btnRepeat"
+                type="button"
+                title="Repetir último audio">
+                ⟳ Repetir
+            </button>
+
+            <button
+                id="btnReset"
+                type="button"
+                title="Reiniciar conversación">
+                ⟲ Reset
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ===================== CONTROLES ===================== -->
+
+    <section class="controls">
+
+        <div class="control-group">
+
+            <label for="personaSelect">
+                Personalidad:
+            </label>
+
+            <select id="personaSelect">
+
+                <option value="jarvis">
+                    🤖 Jarvis
+                </option>
+
+                <option value="andyia">
+                    👩 AndyIA
+                </option>
+
+                <option value="paisa" selected>
+                    🇨🇴 Salomé Paisa
+                </option>
+
+                <option value="tecnico">
+                    📊 Especialista CGR
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="control-group">
+
+            <button
+                id="btnGrabar"
+                type="button"
+                title="Iniciar grabación">
+
+                🎤 Grabar
+
+            </button>
+
+            <button
+                id="btnDetener"
+                type="button"
+                title="Detener grabación"
+                disabled>
+
+                ⏹️ Detener
+
+            </button>
+
+            <button
+                type="button"
+                onclick="probarCORS()">
+
+                🩺 Diagnóstico
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== CHAT ===================== -->
+
+    <main id="chat">
+
+        <div id="messages">
+
+        </div>
+
+        <div id="typingIndicator" style="display:none;">
+            🤖 Jarvis está pensando...
+        </div>
+
+        <div id="formulario">
+
+            <input
+                type="text"
+                id="input"
+                placeholder="Escribe tu mensaje..."
+                autocomplete="off" />
+
+            <button
+                id="btnEnviar"
+                type="button">
+
+                Enviar
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- ===================== PIE ===================== -->
+
+    <footer id="footerInfo">
+
+        <span>
+            Jarvis Web 2.0
+        </span>
+
+        <span>
+            OpenAI GPT-4o-mini
+        </span>
+
+        <span>
+            OpenAI TTS
+        </span>
+
+        <span>
+            Whisper
+        </span>
+
+    </footer>
+
+    <!-- ===================== SCRIPT ===================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

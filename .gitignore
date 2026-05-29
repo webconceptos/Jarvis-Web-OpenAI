@@ -35,3 +35,9 @@ build/
 # Archivos VS Code
 .vscode/
 
+
+.env
+.env.*
+*.mp3
+__pycache__/
+*.pyc

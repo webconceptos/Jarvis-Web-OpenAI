@@ -1,7 +1,7 @@
 
 import requests
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:2000"
 
 def test_chat():
     payload = {
@@ -24,7 +24,7 @@ def test_speak():
     texto = "Hola, soy Jarvis y estoy listo para ayudarte."
 
     # CORRECTO: enviar como JSON
-    speak_response = requests.post("http://localhost:8000/speak", json={"text": texto})
+    speak_response = requests.post("http://localhost:2000/speak", json={"text": texto})
 
     if speak_response.status_code == 200:
         with open("respuesta.mp3", "wb") as f:

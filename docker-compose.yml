@@ -1,0 +1,59 @@
+x-defaults: &defaults
+  restart: unless-stopped
+
+services:
+  backend:
+    build:
+      context: ./jarvis_backend
+      dockerfile: Dockerfile
+      args:
+        WHISPER_MODEL: ${WHISPER_MODEL:-base}
+    container_name: jarvis_backend
+    env_file: .env
+    environment:
+      # Variables adicionales (si quieres override)
+      XDG_CACHE_HOME: /cache
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    volumes:
+      - whisper_cache:/cache
+    ports:
+      - "2000:2000"
+    networks:
+      - jarvis_net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:2000/health >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 25s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    build:
+      context: ./jarvis_frontend
+      dockerfile: Dockerfile
+    container_name: jarvis_frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "88:80"
+    networks:
+      - jarvis_net
+    <<: *defaults
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+volumes:
+  whisper_cache:
+
+networks:
+  jarvis_net:
+    driver: bridge
